@@ -3,11 +3,10 @@ int main()
 {
     int r;
     scanf("%d",&r);
-    float a;
+    float a,p;
     a=3.14*r*r;
-    float s;
-    s=2*3.14*r;
+    p=2*3.14*r;
     printf("%0.2f
 ",a);
-    printf("%0.2f",s);
+    printf("%0.2f",p);
 }
