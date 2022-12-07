@@ -5,7 +5,6 @@ int main()
     scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
     int p;
     p=(a+b+c+d+e)/5.0;
-    
     if(p>=90)
     {
         printf("Grade A");
@@ -14,11 +13,11 @@ int main()
     {
         printf("Grade B");
     }
-     else if(p>=70)
+    else if(p>70)
     {
         printf("Grade C");
     }
-     else if(p>=60)
+    else if(p>60)
     {
         printf("Grade D");
     }
@@ -26,7 +25,7 @@ int main()
     {
         printf("Grade E");
     }
-    else 
+    else
     {
         printf("Grade F");
     }
