@@ -1,5 +1,4 @@
 #include<stdio.h>
-//5x+10y/z
 int main()
 {
     int x,y,z;
@@ -7,4 +6,5 @@ int main()
     int a;
     a=(5*x+10*y)/z;
     printf("%d",a);
+    
 }
