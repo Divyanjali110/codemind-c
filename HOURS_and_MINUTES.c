@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int  min;
+    int min;
     scanf("%d",&min);
     int a,b;
     a=min/60;
