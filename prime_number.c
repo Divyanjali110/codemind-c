@@ -1,21 +1,30 @@
 #include <stdio.h>
-int main()
-{
-    int n,i,cou=0;
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
-    {
-        if(n%i==0)
-        {
-            cou++;
+#include <stdbool.h>
+
+bool isPrime(int num) {
+    if (num < 2) {
+        return false;
+    }
+
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
         }
     }
-    if(cou++<=2)
-    {
+
+    return true;
+}
+
+int main() {
+    int number;
+
+    scanf("%d", &number);
+
+    if (isPrime(number)) {
         printf("prime");
-    }
-    else
-    {
+    } else {
         printf("not a prime");
     }
+
+    return 0;
 }
