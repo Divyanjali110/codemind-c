@@ -1,23 +1,25 @@
 #include <stdio.h>
 
-int gcd(int a, int b) {
-    if (b == 0) {
-        return a;
+int gcd(int num1, int num2) {
+    while (num2 != 0) {
+        int temp = num2;
+        num2 = num1 % num2;
+        num1 = temp;
     }
-    return gcd(b, a % b);
+    return num1;
 }
 
-int lcm(int a, int b) {
-    int gcdValue = gcd(a, b);
-    return (a * b) / gcdValue;
+int lcm(int num1, int num2) {
+    int gcdValue = gcd(num1, num2);
+    int lcmValue = (num1 * num2) / gcdValue;
+    return lcmValue;
 }
 
 int main() {
     int num1, num2;
 
-    scanf("%d", &num1);
 
-    scanf("%d", &num2);
+    scanf("%d %d", &num1, &num2);
 
     int lcmValue = lcm(num1, num2);
 
