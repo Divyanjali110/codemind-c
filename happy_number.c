@@ -1,40 +1,33 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-int squareSumOfDigits(int num) {
-    int sum = 0;
-    while (num > 0) {
-        int digit = num % 10;
-        sum += digit * digit;
-        num /= 10;
+int isHappyNumber(int num) {
+    int sum, digit;
+
+    while (num != 1 && num != 4) {
+        sum = 0;
+        while (num > 0) {
+            digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+        num = sum;
     }
-    return sum;
-}
 
-bool isHappyNumber(int num) {
-    int slow = num;
-    int fast = num;
-
-    do {
-        slow = squareSumOfDigits(slow);
-        fast = squareSumOfDigits(squareSumOfDigits(fast));
-    } while (slow != fast);
-
-    return slow == 1;
+    if (num == 1)
+        return 1;  // Number is a happy number
+    else
+        return 0;  // Number is not a happy number
 }
 
 int main() {
-    int num;
+    int number;
 
-  
-    scanf("%d", &num);
+    scanf("%d", &number);
 
-    if (isHappyNumber(num)) {
-        printf("True
-");
-    } else {
+    if (isHappyNumber(number))
+        printf("True");
+    else
         printf("False");
-    }
 
     return 0;
 }
