@@ -1,34 +1,26 @@
-#include<stdio.h>
-int main()
-{
-    int n,i,c;
-    scanf("%d",&n);
-    int a[n];
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int arr[N];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
     }
-    for(i=0;i<n;i++)
-    {
-        if(a[i]%2!=0)
-        {
-            if(i%2!=0)
-            {
-                c=0;
-            }
-            else
-            {
-                c=1;
-                break;
-            }
+
+    int isStrictlyOdd = 1; // Assume the array is strictly odd initially
+
+    for (int i = 0; i < N; i++) {
+        if (arr[i] % 2 == 0 && i % 2 == 1) {
+            // If an even number exists at an odd index, the array is not strictly odd
+            isStrictlyOdd = 0;
+            break;
         }
     }
-    if(c!=1)
-    {
-        printf("True");
-    }
-    else
-    {
-        printf("False");
-    }
+
+    printf("%s
+", isStrictlyOdd ? "True" : "False");
+
+    return 0;
 }
